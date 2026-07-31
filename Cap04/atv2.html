@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursos Multimídia — Cap. 4 / Ativ. 4</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Recursos Multimídia</h1>
+        <p>Capítulo 4 - Atividade 4</p>
+    </header>
+
+    <main>
+
+        <!-- Bloco 1 - Vídeo -->
+        <figure>
+            <video controls width="800" height="450" poster="poster-aula.jpg" preload="metadata">
+
+                <source src="videos/aula-html.mp4" type="video/mp4">
+                <source src="videos/aula-html.webm" type="video/webm">
+
+                <track
+                    src="legendas/aula-html.vtt"
+                    kind="subtitles"
+                    srclang="pt"
+                    label="Português"
+                    default>
+
+                <p>
+                    Seu navegador não suporta vídeos em HTML5.
+                    <a href="videos/aula-html.mp4">Clique aqui para baixar o vídeo.</a>
+                </p>
+
+            </video>
+
+            <figcaption>
+                Vídeo introdutório sobre HTML5. Fonte: Material didático do curso.
+            </figcaption>
+        </figure>
+
+        <hr>
+
+        <!-- Bloco 2 - Áudio -->
+        <figure>
+
+            <audio controls preload="metadata">
+
+                <source src="audios/podcast-html.mp3" type="audio/mpeg">
+                <source src="audios/podcast-html.ogg" type="audio/ogg">
+
+                <p>
+                    Seu navegador não suporta áudio em HTML5.
+                    <a href="audios/podcast-html.mp3">Baixar o áudio.</a>
+                </p>
+
+            </audio>
+
+            <figcaption>
+                Episódio: Introdução ao HTML5.
+                <a href="transcricao.html">Ver transcrição</a>.
+            </figcaption>
+
+        </figure>
+
+        <hr>
+
+        <!-- Bloco 3 - YouTube -->
+        <figure>
+
+            <iframe
+                width="800"
+                height="450"
+                src="https://www.youtube-nocookie.com/embed/qz0aGYrrlhU"
+                title="Curso de HTML para iniciantes"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+
+            <figcaption>
+                Vídeo: Curso de HTML para iniciantes. Canal: Programming with Mosh. Plataforma: YouTube.
+            </figcaption>
+
+        </figure>
+
+        <hr>
+
+        <!-- Bloco 4 - Picture -->
+        <figure>
+
+            <picture>
+
+                <source
+                    media="(min-width: 768px)"
+                    srcset="img/banner-wide.jpg">
+
+                <img
+                    src="img/banner-mobile.jpg"
+                    alt="Banner ilustrando tecnologias utilizadas no desenvolvimento web."
+                    width="800"
+                    height="400">
+
+            </picture>
+
+            <figcaption>
+                Banner responsivo demonstrando adaptação da imagem conforme o tamanho da tela.
+            </figcaption>
+
+        </figure>
