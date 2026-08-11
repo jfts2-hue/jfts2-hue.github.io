@@ -1,66 +1,126 @@
-<html>
-  <head>
-   <title>protóipo de perfil pessoal</title>
-   <style>
-     .nome {
-     text-align:center;
-     color:purple;
-     }
-     .centro {
-       display:block;
-       margin:0 auto;
-     }
-   </style>
-  </head>
-    <h1 class=nome>Joaquim Ferreira Teles da Silva</h1>
-    <h2 style="text-align:center;">Desenvolvimento de Sistemas 921C</h2>
-    <img src="Foto_perfil.jpg"
-    height="400" width="300" class=centro/>
-    <h3 style="text-align:center">20/11/2010</h3>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Protótipo de Perfil Pessoal</title>
+  <style>
+    /* Estilos Gerais */
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
 
-    <p>Eu gosto de jogos RPG e também gosto de música meu favorito estilo jazz</p>
-    <ul>
-      <li>Introdução a Programação</li>
-        <ul>
-          <li>Programação iniciante em Java Script</li>
-        </ul>
-      <li>Programação WEB</li>
-        <ul>
-          <li>Compreensão do funcionamento da WEB</li>
-          <li>Programação iniciante em HTML</li>
-          <li>Programação iniciante em CSS</li>
-        </ul>
-      <li>Fundamentos de Informática</li>
-        <ul>
-          <li>Compreensão do Software e Hardware</li>
-          <li>Conhecimentos aprofundados no modelo cliente-servidor</li> 
-        </ul>
-    </ul>
-    <a href="http://www.ifal.edu.br">LINK para o portal IFAL </a>
+    /* Centralização e Cores */
+    .text-center {
+      text-align: center;
+    }
 
-      <section>
-        <h1>Capítulo 5 - Formulários HTML</h1>
-        <nav>
-          <ul>
-            <li><a href="Cap05/atv1.html">Atividade 1 - Formulário de Contato
-            <li><a href="Cap05/atv2.html">Atividade 2 - Cadastro de Usuário</a></li>
-            <li><a href="Cap05/atv3.html">Atividade 3 - Matrícula Acadêmico</a></li>
-            <li><a href="Cap05/atv4.html">Atividade 4 - Inscrição de Evento</a></li>
-            <li><a href="Cap05/atv5.html">Atividade 5 - Pesquisa Acadêmica</a></li>
-          </ul>
-        </nav>
-      </section>
+    .nome {
+      text-align: center;
+      color: purple;
+    }
+
+    /* Centralização Perfeita da Foto */
+    .centro {
+      display: block;
+      margin: 20px auto;
+      border-radius: 10px; /* Deixa os cantos da foto arredondados */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    }
+
+    /* Ajustes de Layout */
+    p {
+      text-align: center;
+      font-size: 1.1em;
+      margin: 20px 0;
+    }
+
+    section {
+      background: white;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .link-portal {
+      display: block;
+      text-align: center;
+      margin: 20px 0;
+      font-weight: bold;
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    .link-portal:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 class="nome">Joaquim Ferreira Teles da Silva</h1>
+  <h2 class="text-center">Desenvolvimento de Sistemas 921C</h2>
   
-     <section>
-        <h1>Capítulo 4 - tabelas HTML</h1>
-        <nav>
-          <ul>
-            <li><a href="Cap04/atv1.html">Atividade 1 - Horario de Sala </a><li>
-            <li><a href="Cap04/atv2.html">Atividade 2 - Multimidia </a></li>
-            <li><a href="Cap04/atv5.html">Atividade 3 - Nota Bimestral</a></li>
-            <li><a href="Cap04/atv4.html">Atividade 4 - Guia Web</a></li>
-          </ul>
-        </nav>
-      </section>
+  <!-- Foto Centralizada -->
+  <img src="Foto_perfil.jpg" alt="Foto de Perfil" height="400" width="300" class="centro"/>
+  
+  <h3 class="text-center">20/11/2010</h3>
+
+  <p>Eu gosto de jogos RPG e também gosto de música, meu estilo favorito é jazz.</p>
+  
+  <!-- Lista de Disciplinas Corrigida -->
+  <ul>
+    <li>Introdução a Programação
+      <ul>
+        <li>Programação iniciante em JavaScript</li>
+      </ul>
+    </li>
+    <li>Programação WEB
+      <ul>
+        <li>Compreensão do funcionamento da WEB</li>
+        <li>Programação iniciante em HTML</li>
+        <li>Programação iniciante em CSS</li>
+      </ul>
+    </li>
+    <li>Fundamentos de Informática
+      <ul>
+        <li>Compreensão do Software e Hardware</li>
+        <li>Conhecimentos aprofundados no modelo cliente-servidor</li> 
+      </ul>
+    </li>
+  </ul>
+
+  <a href="http://www.ifal.edu.br" class="link-portal">LINK para o portal IFAL</a>
+
+  <section>
+    <h2>Capítulo 5 - Formulários HTML</h2>
+    <nav>
+      <ul>
+        <li><a href="Cap05/atv1.html">Atividade 1 - Formulário de Contato</a></li>
+        <li><a href="Cap05/atv2.html">Atividade 2 - Cadastro de Usuário</a></li>
+        <li><a href="Cap05/atv3.html">Atividade 3 - Matrícula Acadêmica</a></li>
+        <li><a href="Cap05/atv4.html">Atividade 4 - Inscrição de Evento</a></li>
+        <li><a href="Cap05/atv5.html">Atividade 5 - Pesquisa Acadêmica</a></li>
+      </ul>
+    </nav>
+  </section>
+
+  <section>
+    <h2>Capítulo 4 - Tabelas HTML</h2>
+    <nav>
+      <ul>
+        <li><a href="Cap04/atv1.html">Atividade 1 - Horário de Sala</a></li>
+        <li><a href="Cap04/atv2.html">Atividade 2 - Multimídia</a></li>
+        <li><a href="Cap04/atv5.html">Atividade 3 - Nota Bimestral</a></li>
+        <li><a href="Cap04/atv4.html">Atividade 4 - Guia Web</a></li>
+      </ul>
+    </nav>
+  </section>
+
 </body>
 </html>
