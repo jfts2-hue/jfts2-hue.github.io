@@ -1,126 +1,182 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Protótipo de Perfil Pessoal</title>
-  <style>
-    /* Estilos Gerais */
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-      background-color: #f9f9f9;
-      color: #333;
-    }
+    <meta charset="UTF-8">
+    <title>Protótipo de Perfil Pessoal</title>
+    <style>
+        /* Estilos Gerais */
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        
+        /* Centralização e Cores */
+        .text-center {
+            text-align: center;
+        }
+        .nome {
+            text-align: center;
+            color: purple;
+        }
+        
+        /* Centralização Perfeita da Foto */
+        .centro {
+            display: block;
+            margin: 20px auto;
+            border-radius: 10px; /* Deixa os cantos da foto arredondados */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        }
+        
+        /* Ajustes de Layout */
+        p {
+            text-align: center;
+            font-size: 1.1em;
+            margin: 20px 0;
+        }
+        section {
+            background: white;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .link-portal {
+            display: block;
+            text-align: center;
+            margin: 20px 0;
+            font-weight: bold;
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .link-portal:hover {
+            text-decoration: underline;
+        }
 
-    /* Centralização e Cores */
-    .text-center {
-      text-align: center;
-    }
-
-    .nome {
-      text-align: center;
-      color: purple;
-    }
-
-    /* Centralização Perfeita da Foto */
-    .centro {
-      display: block;
-      margin: 20px auto;
-      border-radius: 10px; /* Deixa os cantos da foto arredondados */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    }
-
-    /* Ajustes de Layout */
-    p {
-      text-align: center;
-      font-size: 1.1em;
-      margin: 20px 0;
-    }
-
-    section {
-      background: white;
-      padding: 15px;
-      margin: 20px 0;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
-
-    .link-portal {
-      display: block;
-      text-align: center;
-      margin: 20px 0;
-      font-weight: bold;
-      color: #0066cc;
-      text-decoration: none;
-    }
-
-    .link-portal:hover {
-      text-decoration: underline;
-    }
-  </style>
+        /* --- ESTILOS DA NOVA TABELA CENTRALIZADA --- */
+        .container-tabela {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 600px;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 12px 15px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: purple;
+            color: white;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #f1e6f9;
+        }
+    </style>
 </head>
 <body>
 
-  <h1 class="nome">Joaquim Ferreira Teles da Silva</h1>
-  <h2 class="text-center">Desenvolvimento de Sistemas 921C</h2>
-  
-  <!-- Foto Centralizada -->
-  <img src="Foto_perfil.jpg" alt="Foto de Perfil" height="400" width="300" class="centro"/>
-  
-  <h3 class="text-center">20/11/2010</h3>
+    <h1 class="nome">Joaquim Ferreira Teles da Silva</h1>
+    <h2 class="text-center">Desenvolvimento de Sistemas 921C</h2>
 
-  <p>Eu gosto de jogos RPG e também gosto de música, meu estilo favorito é jazz.</p>
-  
-  <!-- Lista de Disciplinas Corrigida -->
-  <ul>
-    <li>Introdução a Programação
-      <ul>
-        <li>Programação iniciante em JavaScript</li>
-      </ul>
-    </li>
-    <li>Programação WEB
-      <ul>
-        <li>Compreensão do funcionamento da WEB</li>
-        <li>Programação iniciante em HTML</li>
-        <li>Programação iniciante em CSS</li>
-      </ul>
-    </li>
-    <li>Fundamentos de Informática
-      <ul>
-        <li>Compreensão do Software e Hardware</li>
-        <li>Conhecimentos aprofundados no modelo cliente-servidor</li> 
-      </ul>
-    </li>
-  </ul>
+    <!-- Foto Centralizada -->
+    <img src="Foto_perfil.jpg" alt="Foto de Perfil" height="400" width="300" class="centro"/>
 
-  <a href="http://www.ifal.edu.br" class="link-portal">LINK para o portal IFAL</a>
+    <h3 class="text-center">20/11/2010</h3>
 
-  <section>
-    <h2>Capítulo 5 - Formulários HTML</h2>
-    <nav>
-      <ul>
-        <li><a href="Cap05/atv1.html">Atividade 1 - Formulário de Contato</a></li>
-        <li><a href="Cap05/atv2.html">Atividade 2 - Cadastro de Usuário</a></li>
-        <li><a href="Cap05/atv3.html">Atividade 3 - Matrícula Acadêmica</a></li>
-        <li><a href="Cap05/atv4.html">Atividade 4 - Inscrição de Evento</a></li>
-        <li><a href="Cap05/atv5.html">Atividade 5 - Pesquisa Acadêmica</a></li>
-      </ul>
-    </nav>
-  </section>
+    <p>Eu gosto de jogos RPG e também gosto de música, meu estilo favorito é jazz.</p>
 
-  <section>
-    <h2>Capítulo 4 - Tabelas HTML</h2>
-    <nav>
-      <ul>
-        <li><a href="Cap04/atv1.html">Atividade 1 - Horário de Sala</a></li>
-        <li><a href="Cap04/atv2.html">Atividade 2 - Multimídia</a></li>
-        <li><a href="Cap04/atv5.html">Atividade 3 - Nota Bimestral</a></li>
-        <li><a href="Cap04/atv4.html">Atividade 4 - Guia Web</a></li>
-      </ul>
-    </nav>
-  </section>
+    <!-- TABELA CENTRALIZADA ADICIONADA -->
+    <div class="container-tabela">
+        <table>
+            <thead>
+                <tr>
+                    <th>Horário</th>
+                    <th>Segunda</th>
+                    <th>Quarta</th>
+                    <th>Sexta</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>07:30 - 09:10</td>
+                    <td>Introdução à Programação</td>
+                    <td>Programação WEB</td>
+                    <td>Fundamentos de Informática</td>
+                </tr>
+                <tr>
+                    <td>09:30 - 11:10</td>
+                    <td>Fundamentos de Informática</td>
+                    <td>Introdução à Programação</td>
+                    <td>Programação WEB</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Lista de Disciplinas Corrigida -->
+    <ul>
+        <li>Introdução a Programação
+            <ul>
+                <li>Programação iniciante em JavaScript</li>
+            </ul>
+        </li>
+        <li>Programação WEB
+            <ul>
+                <li>Compreensão do funcionamento da WEB</li>
+                <li>Programação iniciante em HTML</li>
+                <li>Programação iniciante em CSS</li>
+            </ul>
+        </li>
+        <li>Fundamentos de Informática
+            <ul>
+                <li>Compreensão do Software e Hardware</li>
+                <li>Conhecimentos aprofundados no modelo cliente-servidor</li>
+            </ul>
+        </li>
+    </ul>
+
+    <a href="http://ifal.edu.br" class="link-portal">LINK para o portal IFAL</a>
+
+    <section>
+        <h2>Capítulo 5 - Formulários HTML</h2>
+        <nav>
+            <ul>
+                <li><a href="Cap05/atv1.html">Atividade 1 - Formulário de Contato</a></li>
+                <li><a href="Cap05/atv2.html">Atividade 2 - Cadastro de Usuário</a></li>
+                <li><a href="Cap05/atv3.html">Atividade 3 - Matrícula Acadêmica</a></li>
+                <li><a href="Cap05/atv4.html">Atividade 4 - Inscrição de Evento</a></li>
+                <li><a href="Cap05/atv5.html">Atividade 5 - Pesquisa Acadêmica</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <section>
+        <h2>Capítulo 4 - Tabelas HTML</h2>
+        <nav>
+            <ul>
+                <li><a href="Cap04/atv1.html">Atividade 1 - Horário de Sala</a></li>
+                <li><a href="Cap04/atv2.html">Atividade 2 - Multimídia</a></li>
+                <li><a href="Cap04/atv5.html">Atividade 3 - Nota Bimestral</a></li>
+                <li><a href="Cap04/atv4.html">Atividade 4 - Guia Web</a></li>
+            </ul>
+        </nav>
+    </section>
 
 </body>
 </html>
