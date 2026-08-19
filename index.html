@@ -2,18 +2,53 @@
 <html lang="pt-BR"> 
 <head> 
     <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Protótipo de Perfil Pessoal</title> 
     <style> 
-        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; color: #333; } 
+        body { 
+            font-family: Arial, sans-serif; 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 20px; 
+            background-color: #f9f9f9; 
+            color: #333; 
+        } 
         .text-center { text-align: center; } 
         .nome { text-align: center; color: purple; } 
-        .centro { display: block; margin: 20px auto; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); } 
+        .centro { 
+            display: block; 
+            margin: 20px auto; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+            object-fit: cover;
+        } 
         p { text-align: center; font-size: 1.1em; margin: 20px 0; } 
-        section { background: white; padding: 15px; margin: 20px 0; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); } 
-        .link-portal { display: block; text-align: center; margin: 20px 0; font-weight: bold; color: #0066cc; text-decoration: none; } 
+        section { 
+            background: white; 
+            padding: 15px; 
+            margin: 20px 0; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05); 
+        } 
+        .link-portal { 
+            display: block; 
+            text-align: center; 
+            margin: 20px 0; 
+            font-weight: bold; 
+            color: #0066cc; 
+            text-decoration: none; 
+        } 
         .link-portal:hover { text-decoration: underline; } 
         .container-tabela { display: flex; justify-content: center; margin: 30px 0; } 
-        table { border-collapse: collapse; width: 100%; max-width: 600px; background-color: white; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); border-radius: 8px; overflow: hidden; } 
+        table { 
+            border-collapse: collapse; 
+            width: 100%; 
+            max-width: 600px; 
+            background-color: white; 
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); 
+            border-radius: 8px; 
+            overflow: hidden; 
+        } 
         th, td { padding: 12px 15px; text-align: center; border: 1px solid #ddd; } 
         th { background-color: purple; color: white; font-weight: bold; } 
         tr:nth-child(even) { background-color: #f2f2f2; } 
@@ -24,11 +59,11 @@
     <h1 class="nome">Joaquim Ferreira Teles da Silva</h1> 
     <h2 class="text-center">Desenvolvimento de Sistemas 921C</h2> 
     
-    <img src="Foto_perfil.jpg" alt="Foto de Perfil" height="400" width="300" class="centro"/> 
+    <img src="Foto_perfil.jpg" alt="Foto de perfil de Joaquim Ferreira Teles da Silva" height="400" width="300" class="centro"/> 
     <h3 class="text-center">20/11/2010</h3> 
     <p>Eu gosto de jogos RPG e também gosto de música, meu estilo favorito é jazz.</p> 
 
-    <!-- Tabela Corrigida -->
+    <!-- Tabela de Atividades do Capítulo 5 -->
     <div class="container-tabela"> 
         <table> 
             <thead> 
@@ -71,21 +106,9 @@
         </ul> 
     </section>
 
-    <a href="http://ifal.edu.br" class="link-portal">LINK para o portal IFAL</a> 
+    <a href="https://ifal.edu.br" target="_blank" rel="noopener noreferrer" class="link-portal">LINK para o portal IFAL</a> 
 
-    <section> 
-        <h2>Capítulo 5 - Formulários HTML</h2> 
-        <nav> 
-            <ul> 
-                <li><a href="Cap05/atv1.html">Atividade 1 - Formulário de Contato</a></li> 
-                <li><a href="Cap05/atv2.html">Atividade 2 - Cadastro de Usuário</a></li> 
-                <li><a href="Cap05/atv3.html">Atividade 3 - Matrícula Acadêmica</a></li> 
-                <li><a href="Cap05/atv4.html">Atividade 4 - Inscrição de Evento</a></li> 
-                <li><a href="Cap05/atv5.html">Atividade 5 - Pesquisa Acadêmica</a></li> 
-            </ul> 
-        </nav> 
-    </section> 
-
+    <!-- Links do Capítulo 4 --> 
     <section> 
         <h2>Capítulo 4 - Tabelas HTML</h2> 
         <nav> 
