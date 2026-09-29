@@ -2,123 +2,323 @@
 <html lang="pt-BR"> 
 <head> 
     <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Protótipo de Perfil Pessoal</title> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Perfil Pessoal - Joaquim Ferreira</title> 
     <style> 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body { 
-            font-family: Arial, sans-serif; 
-            max-width: 800px; 
-            margin: 0 auto; 
-            padding: 20px; 
-            background-color: #f9f9f9; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: #f4f5f7; 
             color: #333; 
+            line-height: 1.6;
+            padding: 20px;
         } 
-        .text-center { text-align: center; } 
-        .nome { text-align: center; color: purple; } 
-        .centro { 
-            display: block; 
-            margin: 20px auto; 
-            border-radius: 10px; 
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        /* Layout Grid para telas maiores */
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: 1fr 1fr;
+                grid-template-areas: 
+                    "header header"
+                    "perfil perfil"
+                    "cap5 cap4"
+                    "grade grade"
+                    "footer footer";
+            }
+        }
+
+        /* Estilização dos Blocos */
+        header {
+            grid-area: header;
+            text-align: center;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .nome { 
+            color: #6b21a8; 
+            font-size: 2em;
+            margin-bottom: 5px;
+        } 
+
+        .subtitulo {
+            color: #666;
+            font-size: 1.1em;
+            font-weight: 500;
+        }
+
+        /* Cartão de Perfil */
+        .perfil-card {
+            grid-area: perfil;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            display: grid;
+            grid-template-columns: 1fr;
+            align-items: center;
+            gap: 20px;
+            text-align: center;
+        }
+
+        @media (min-width: 600px) {
+            .perfil-card {
+                grid-template-columns: 200px 1fr;
+                text-align: left;
+            }
+        }
+
+        .foto-perfil { 
+            width: 180px;
+            height: 180px;
+            border-radius: 50%; 
             object-fit: cover;
-        } 
-        p { text-align: center; font-size: 1.1em; margin: 20px 0; } 
-        section { 
+            border: 4px solid #6b21a8;
+            margin: 0 auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .data-nasc {
+            display: inline-block;
+            background-color: #f3e8ff;
+            color: #6b21a8;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .secao { 
             background: white; 
-            padding: 15px; 
-            margin: 20px 0; 
-            border-radius: 8px; 
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05); 
+            padding: 20px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
         } 
-        .link-portal { 
-            display: block; 
-            text-align: center; 
-            margin: 20px 0; 
-            font-weight: bold; 
-            color: #0066cc; 
-            text-decoration: none; 
-        } 
-        .link-portal:hover { text-decoration: underline; } 
-        .container-tabela { display: flex; justify-content: center; margin: 30px 0; } 
-        table { 
-            border-collapse: collapse; 
+
+        .secao-cap5 { grid-area: cap5; }
+        .secao-cap4 { grid-area: cap4; }
+        .secao-grade { grid-area: grade; }
+
+        h2 {
+            color: #6b21a8;
+            border-bottom: 2px solid #f3e8ff;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        /* Tabela Estilizada */
+        .tabela-atividades { 
             width: 100%; 
-            max-width: 600px; 
-            background-color: white; 
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); 
-            border-radius: 8px; 
+            border-collapse: collapse; 
             overflow: hidden; 
+            border-radius: 8px;
         } 
-        th, td { padding: 12px 15px; text-align: center; border: 1px solid #ddd; } 
-        th { background-color: purple; color: white; font-weight: bold; } 
-        tr:nth-child(even) { background-color: #f2f2f2; } 
-        tr:hover { background-color: #f1e6f9; } 
+
+        .tabela-atividades th, 
+        .tabela-atividades td { 
+            padding: 12px; 
+            text-align: left; 
+            border-bottom: 1px solid #eee; 
+        } 
+
+        .tabela-atividades th { 
+            background-color: #6b21a8; 
+            color: white; 
+        } 
+
+        .tabela-atividades tr:hover { 
+            background-color: #faf5ff; 
+        } 
+
+        .tabela-atividades a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            display: block;
+        }
+
+        .tabela-atividades a:hover {
+            color: #6b21a8;
+        }
+
+        /* Listas de Links e Grade */
+        .lista-links {
+            list-style: none;
+            display: grid;
+            gap: 10px;
+        }
+
+        .lista-links a {
+            display: block;
+            padding: 10px 15px;
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 6px;
+            color: #374151;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .lista-links a:hover {
+            background: #f3e8ff;
+            border-color: #c084fc;
+            color: #6b21a8;
+        }
+
+        /* Grade Curricular em Grid */
+        .grid-disciplinas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .card-disciplina {
+            background: #fafafa;
+            border: 1px solid #eee;
+            border-left: 4px solid #6b21a8;
+            padding: 15px;
+            border-radius: 6px;
+        }
+
+        .card-disciplina h3 {
+            font-size: 1.05em;
+            margin-bottom: 8px;
+            color: #111;
+        }
+
+        .card-disciplina ul {
+            padding-left: 18px;
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        /* Rodapé / Link do Portal */
+        footer {
+            grid-area: footer;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .link-portal { 
+            display: inline-block; 
+            padding: 12px 24px;
+            background-color: #0066cc;
+            color: white;
+            text-decoration: none; 
+            border-radius: 25px;
+            font-weight: bold; 
+            transition: background 0.2s;
+        } 
+
+        .link-portal:hover { 
+            background-color: #004999;
+        } 
     </style> 
 </head> 
 <body> 
-    <h1 class="nome">Joaquim Ferreira Teles da Silva</h1> 
-    <h2 class="text-center">Desenvolvimento de Sistemas 921C</h2> 
-    
-    <img src="Foto_perfil.jpg" alt="Foto de perfil de Joaquim Ferreira Teles da Silva" height="400" width="300" class="centro"/> 
-    <h3 class="text-center">20/11/2010</h3> 
-    <p>Eu gosto de jogos RPG e também gosto de música, meu estilo favorito é jazz.</p> 
 
-    <!-- Tabela de Atividades do Capítulo 5 -->
-    <div class="container-tabela"> 
-        <table> 
-            <thead> 
-                <tr> 
-                    <th>Atividades do Capítulo 5</th> 
-                </tr> 
-            </thead> 
-            <tbody> 
-                <tr><td><a href="Cap05/atv1.html">Atividade 1 - Formulário de Contato</a></td></tr> 
-                <tr><td><a href="Cap05/atv2.html">Atividade 2 - Cadastro de Usuário</a></td></tr> 
-                <tr><td><a href="Cap05/atv3.html">Atividade 3 - Matrícula Acadêmica</a></td></tr> 
-                <tr><td><a href="Cap05/atv4.html">Atividade 4 - Inscrição de Evento</a></td></tr> 
-                <tr><td><a href="Cap05/atv5.html">Atividade 5 - Pesquisa Acadêmica</a></td></tr> 
-            </tbody> 
-        </table> 
+    <div class="container">
+        
+        <!-- Cabeçalho -->
+        <header>
+            <h1 class="nome">Joaquim Ferreira Teles da Silva</h1> 
+            <p class="subtitulo">Desenvolvimento de Sistemas 921C</p> 
+        </header>
+
+        <!-- Cartão de Perfil Pessoal -->
+        <section class="perfil-card">
+            <img src="Foto_perfil.jpg" alt="Foto de perfil de Joaquim Ferreira Teles da Silva" class="foto-perfil"/> 
+            <div>
+                <span class="data-nasc">📅 20/11/2010</span>
+                <p>Eu gosto de jogos RPG e também gosto de música, meu estilo favorito é jazz.</p> 
+            </div>
+        </section>
+
+        <!-- Tabela de Atividades - Capítulo 5 -->
+        <section class="secao secao-cap5"> 
+            <h2>Capítulo 5 - Formulários</h2>
+            <table class="tabela-atividades"> 
+                <thead> 
+                    <tr> 
+                        <th>Atividade</th> 
+                    </tr> 
+                </thead> 
+                <tbody> 
+                    <tr><td><a href="Cap05/atv1.html">Atividade 1 - Formulário de Contato</a></td></tr> 
+                    <tr><td><a href="Cap05/atv2.html">Atividade 2 - Cadastro de Usuário</a></td></tr> 
+                    <tr><td><a href="Cap05/atv3.html">Atividade 3 - Matrícula Acadêmica</a></td></tr> 
+                    <tr><td><a href="Cap05/atv4.html">Atividade 4 - Inscrição de Evento</a></td></tr> 
+                    <tr><td><a href="Cap05/atv5.html">Atividade 5 - Pesquisa Acadêmica</a></td></tr> 
+                </tbody> 
+            </table> 
+        </section>
+
+        <!-- Links do Capítulo 4 --> 
+        <section class="secao secao-cap4"> 
+            <h2>Capítulo 4 - Tabelas HTML</h2> 
+            <nav> 
+                <ul class="lista-links"> 
+                    <li><a href="Cap04/atv1.html">Atividade 1 - Horário de Sala</a></li> 
+                    <li><a href="Cap04/atv2.html">Atividade 2 - Multimídia</a></li> 
+                    <li><a href="Cap04/atv5.html">Atividade 3 - Nota Bimestral</a></li> 
+                    <li><a href="Cap04/atv4.html">Atividade 4 - Guia Web</a></li> 
+                </ul> 
+            </nav> 
+        </section> 
+
+        <!-- Grade Curricular --> 
+        <section class="secao secao-grade"> 
+            <h2>Grade Curricular</h2> 
+            <div class="grid-disciplinas">
+                <div class="card-disciplina">
+                    <h3>Introdução à Programação</h3>
+                    <ul> 
+                        <li>Programação iniciante em JavaScript</li> 
+                    </ul> 
+                </div>
+
+                <div class="card-disciplina">
+                    <h3>Programação WEB</h3>
+                    <ul> 
+                        <li>Compreensão do funcionamento da WEB</li> 
+                        <li>Programação iniciante em HTML</li> 
+                        <li>Programação iniciante em CSS</li> 
+                    </ul> 
+                </div>
+
+                <div class="card-disciplina">
+                    <h3>Fundamentos de Informática</h3>
+                    <ul> 
+                        <li>Compreensão de Software e Hardware</li> 
+                        <li>Modelo cliente-servidor aprofundado</li> 
+                    </ul> 
+                </div>
+            </div>
+        </section> 
+
+        <!-- Rodapé -->
+        <footer>
+            <a href="https://ifal.edu.br" target="_blank" rel="noopener noreferrer" class="link-portal">Acessar o portal IFAL</a> 
+        </footer>
+
     </div>
 
-    <!-- Lista de Disciplinas --> 
-    <section>
-        <h2>Grade Curricular</h2>
-        <ul> 
-            <li>Introdução a Programação 
-                <ul> 
-                    <li>Programação iniciante em JavaScript</li> 
-                </ul> 
-            </li> 
-            <li>Programação WEB 
-                <ul> 
-                    <li>Compreensão do funcionamento da WEB</li> 
-                    <li>Programação iniciante em HTML</li> 
-                    <li>Programação iniciante em CSS</li> 
-                </ul> 
-            </li> 
-            <li>Fundamentos de Informática 
-                <ul> 
-                    <li>Compreensão do Software e Hardware</li> 
-                    <li>Conhecimentos aprofundados no modelo cliente-servidor</li> 
-                </ul> 
-            </li> 
-        </ul> 
-    </section>
-
-    <a href="https://ifal.edu.br" target="_blank" rel="noopener noreferrer" class="link-portal">LINK para o portal IFAL</a> 
-
-    <!-- Links do Capítulo 4 --> 
-    <section> 
-        <h2>Capítulo 4 - Tabelas HTML</h2> 
-        <nav> 
-            <ul> 
-                <li><a href="Cap04/atv1.html">Atividade 1 - Horário de Sala</a></li> 
-                <li><a href="Cap04/atv2.html">Atividade 2 - Multimídia</a></li> 
-                <li><a href="Cap04/atv5.html">Atividade 3 - Nota Bimestral</a></li> 
-                <li><a href="Cap04/atv4.html">Atividade 4 - Guia Web</a></li> 
-            </ul> 
-        </nav> 
-    </section> 
 </body> 
 </html>
