@@ -1,0 +1,375 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 100%;
+  padding: 32px 0;
+  margin: 0;
+   box-sizing: border-box;
+}
+
+.carousel-item img {
+    height: 250px;          /* Altura fixa proporcional */
+    object-fit: cover;      /* Impede que a foto do tênis fique esticada/deformada */
+
+}
+
+.menu-topo {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    border-bottom: 1px solid #000;
+    text-align: center;
+    gap: 16px;
+    
+}
+.categorias{
+    padding: 16px;
+    gap: 16px;
+
+}
+ 
+.linha {
+    display:flex;
+    flex-direction: row;           
+    justify-content:space-evenly; 
+    align-items: center;            
+    gap: 16px;                    
+    width: 100%;                    
+    flex-wrap: wrap;   
+    background-color: rgb(255, 255, 255); 
+    padding: 16px; 
+    margin: 0 auto;
+    object-fit: contain;
+   
+   
+
+}
+#logaritimo img{
+    border: 3px solid rgb(164, 41, 41);
+    border-radius: 50%;
+    animation: girar 10s linear infinite;
+    order: 1;
+}
+
+
+
+    @keyframes girar {
+        from {
+            transform: rotateY(0deg);
+        }
+        to {
+            transform: rotateY(360deg);
+        }
+
+        
+    
+        
+    }
+
+
+
+p {
+  font-size: 18px;
+  line-height: 1.5;
+  word-spacing: normal;
+}
+
+ /* 2. Regra para CELULARES (Aplica APENAS em telas de até 768px) */
+@media (max-width: 768px) {
+  p {
+    font-size: 16px;   /* Diminui a fonte no celular */
+    line-height: 1.4;  /* Dá mais espaço vertical no celular */
+    word-spacing: 2px; /* Afasta as palavras no celular */
+
+   
+  }
+}
+
+
+@media (max-width: 699px) {
+
+
+#inicio, #categorias, #Ofertas{
+        display: none;
+    }
+  }
+
+   @media(max-width: 700px) {
+         .linha { display: grid; 
+            grid-template-columns: repeat(3, 1fr) }
+    }
+
+    .linha > *{
+        border: 2px solid black;
+     border-radius: 8%;
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+     align-items: center;
+     text-align: center;
+     padding: 8px;
+     box-sizing: border-box;
+        padding-right: 15px;
+}
+        .linha > * img{
+         max-width: 100%;
+        height: auto;
+        max-height: 100px;
+        object-fit: contain;
+        }
+
+
+        @media(max-width:700px){
+            .menu-topo{
+                display: grid;
+                grid-template-columns: repeat(3,1fr);
+                grid-template-rows: 2, 1fr;
+            }
+        }
+
+        @media(min-width:700px){
+            #butao{
+                display: none;
+            }
+        }
+ 
+
+
+        /*---------------------------menutopo-----------------*/
+        @media(max-width:700px){
+            .ocupaçao{
+     grid-column: 1/5;
+    grid-row: 2;
+}
+
+#search-input{
+    grid-column: 2;
+    grid-row: 1/5;
+}
+
+#compra{
+     grid-column: 4;
+    grid-row: 1;
+}
+#butao{
+    grid-column:3;
+    grid-row: 1;
+}
+        }
+
+/*------------------------------------------------------------------*/
+
+    @media(min-width: 768px){
+        .linha{
+        padding: 6px 16px;
+        gap: 48px;
+        min-height: 20rem;
+    }
+}
+
+
+ @media(max-width: 700px){
+    .menu-topo{
+        display: grid;
+        grid-template-columns: repeat(4, 2fr);
+        
+    }
+}
+
+
+
+.buTaomobile {
+  display: inline-block; /* Ou block, flex, etc. */
+  margin-left: 76px;
+}
+
+@media(min-width:700px) {
+    .buTaomobile{
+    display: none !important;
+   }
+}
+
+
+/*-------------------------------------------destaques----------------------------------------------------------*/
+
+.destaques{
+    display:grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    padding: 6px
+    margin: 16px;
+   
+}
+
+@media(max-width: 768px) {
+    .destaques > div:nth-child(3),
+  .destaques > div:nth-child(4) {
+    display: none !important;
+  }
+}
+@media(max-width:768px){
+    .destaques {
+        width: 5rem !important;
+
+    }
+    .destaques{
+        margin-right: 16px;
+    }
+}
+
+
+
+/*------------------------------------------------------cards-------------------------------------------*/
+
+/* Container da imagem */
+.card-imagem {
+  position: relative !important;
+  display: block;
+  width: 100%;
+    
+}
+
+/* Tag/Legenda sobre a imagem */
+.tag-promocao {
+  position: absolute !important;
+  top: 12px !important;
+  left: 12px !important;
+  z-index: 10 !important;
+  
+  /* Cor de fundo e texto */
+  background-color: #505050 !important; /* Cor cinza escura visível */
+  color: #ffffff !important;            /* Texto branco */
+  
+  /* Espaçamento e forma da etiqueta */
+  padding: 4px 12px !important;
+  font-size: 12px !important;
+  font-weight: bold !important;
+  border-radius: 12px !important;
+  
+  /* Garante o comportamento em linha correto */
+  display: inline-block !important;
+  line-height: 1 !important;
+}
+
+/*------------------------------------baners------------------------------*/
+
+.banner-link {
+  display: block;
+  overflow: hidden;
+}
+
+.banner-link img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease; /* Animação suave para hover */
+}
+
+
+.banner-link:hover img {
+  transform: scale(1.02);
+}
+
+.tamanhoBanners {
+  width: 100%;
+  height: 300px; 
+  overflow: hidden;
+  border-radius: 8px;
+  margin-right: 32px;
+    padding:6px
+}
+
+.tamanhoBanners img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*---------------------coluna------------*/
+.cOLUNA{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 16px;
+
+}
+ @media(max-width:768px){
+    .cOLUNA{
+        display: grid;
+        grid-auto-flow: row;
+        grid-template-columns:1fr;
+
+
+    }
+ }
+
+ .arredondar img{
+    border: solid 2px black;
+    border-radius: 50%;
+    width: 50px;
+    height: 40px;
+    margin: 16px;
+ }
+
+ /*----------------------------------------*/
+
+ .inupt-group {
+     display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin: 32px;
+  padding: 16px;
+ 
+ }
+
+
+ .centralizar{
+    display: flex;
+    flex-direction: row;
+   border: 2px solid black; 
+  background-color: #e0e0e0;
+  color: #000;
+  padding: 16x;
+  margin: 0 auto;
+  
+  
+   
+ }
+
+ @media(max-width:768px){
+    footer .col-{
+        border-bottom: 1px solid #ccc;
+        padding: 12px;
+        margin-bottom:12px ;
+       
+
+    }
+
+ }
+ @media(max-width:768px){
+     footer ul{
+        display: none;
+    }
+ }
+ #final{
+    margin: 0 auto;
+padding: 16px; 
+}
+@media(max-width:768px){
+    .centralizar {
+        border: 2px solid;
+  display: flex;
+  flex-direction: column; /* Deixa os elementos de dentro um abaixo do outro */
+  align-items: center;    /* Centraliza na horizontal */
+  justify-content: center;/* Centraliza na vertical */
+}
+}
